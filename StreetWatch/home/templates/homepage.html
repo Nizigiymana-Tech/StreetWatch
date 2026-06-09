@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
+</head>
+<body>
+    <div id="Welcome">
+        <img src="{% static 'TemplatePFP.png' %}" alt="Profile Picture">
+        <h1>Hello! {{ user.first_name }}</h1>
+    </div>
+
+</body>
+</html>

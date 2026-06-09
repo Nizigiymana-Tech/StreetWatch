@@ -1,0 +1,12 @@
+#Welcome {
+    display: grid;
+    grid-template-columns: repeat(3, 175px);
+    gap: 10px;
+
+    transform: scale(0.6);
+    transform: translateX(-20px);
+}
+
+#Welcome > h1 {
+    transform: translateY(40px) translateX(-15px);
+}

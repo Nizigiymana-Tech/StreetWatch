@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import login
 from .forms import UserForm, LoginUserForm
 
 # Create your views here.
@@ -10,7 +11,7 @@ def signup_view(request):
 
         if form.is_valid():
             form.save()
-            return redirect('home')
+            return redirect('/')
     else:
         form = UserForm()
 
@@ -19,12 +20,12 @@ def signup_view(request):
 # Login Page
 def login_view(request):
     if request.method == "POST":
-        # form = UserForm(request.POST)
+        form = LoginUserForm(request.POST or None)
 
-        # if form.is_valid():
-        #     form.save()
-        #     return redirect('home')
-        print("OK")
+        if form.is_valid():
+            user = form.user_cache
+            login(request, user)
+            return redirect('/')
     else:
         form = LoginUserForm()
 
