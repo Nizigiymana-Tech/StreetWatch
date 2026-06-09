@@ -13,3 +13,24 @@ class UserForm(forms.ModelForm):
         help_texts = {
             'username': "",
         }
+
+    def save(self, commit=True):
+        User = super().save(commit=False)
+        User.set_password(self.cleaned_data["password"])
+
+        if commit:
+            User.save()
+        
+        return User
+
+class LoginUserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    
+    class Meta:
+        model = User
+        fields = ['username', 'password']
+
+        help_texts = {
+            'username': "",
+        }
+    

@@ -5,22 +5,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup</title>
-    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>Log in</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
 </head>
 <body>
-    <div id="Signup">
-        <h1>Signup</h1>
+    <div id="Login">
+        <h1>Login</h1>
 
         <form method="POST">
             {% csrf_token %}
             {{ forms.as_p }}
 
 
-            <button type="submit" id="SubmitButton">Sign up</button>
+            <button type="submit" id="SubmitButton">Log in</button>
         </form>
 
-        <p>Already have an account? <a href="{% url "login" %}">Log In</a></p>
+        <p>Need an acocunt?<a href="{% url "signup" %}">Sign up</a></p>
     </div>
 </body>
 </html>
