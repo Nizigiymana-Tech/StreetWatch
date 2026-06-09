@@ -7,10 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Signup</title>
     <link rel="stylesheet" href="{% static 'signup.css' %}">
-</head>
+</head> 
 <body>
     <div id="Signup">
         <h1>Signup</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+            {{ forms.as_p }}
+            
+
+            <button type="submit" id="SubmitButton" name="action", value="createUser">Create User.</button>
+        </form>
     </div>
 </body>
 </html>

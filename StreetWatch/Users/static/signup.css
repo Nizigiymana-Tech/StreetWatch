@@ -20,3 +20,26 @@ body {
     font-family: 'Times New Roman', Times, serif;
     color: rgb(65, 65, 65);
 }
+
+p { 
+    display: flex;
+    justify-content: center;
+    align-content: center;   
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#SubmitButton {
+    display: block;
+    margin: 0 auto;
+
+    border: white, 2px, solid;
+    color: rgb(64, 55, 55);
+    background-color: beige;
+    
+    padding: 5px;
+
+    transform: translateY(-15%);
+}
