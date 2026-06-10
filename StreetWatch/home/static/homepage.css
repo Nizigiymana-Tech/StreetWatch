@@ -1,5 +1,5 @@
 body {
-    background-color: #f2f2f2;
+    background-color: #d8d8d8;
 }
 
 #Welcome {
@@ -7,7 +7,14 @@ body {
     grid-template-columns: repeat(3, 175px);
     gap: 10px;
 
+    background-color: white;
+    border: 3px black solid;
+
     transform: scale(0.8) translateX(-12%);
+}
+
+#Welcome > img {
+    transform: scale(0.75);
 }
 
 #Welcome > h1 {
@@ -17,7 +24,7 @@ body {
 #Welcome button {
     background: black;
     color: white;
-    border: none;
+    border: 2px rgb(125, 125, 125) solid;
     padding: 10px;
     width: 100px;
     height: 50px;

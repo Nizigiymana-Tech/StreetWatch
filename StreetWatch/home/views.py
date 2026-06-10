@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
-# Create your views here.
 
-# MainPage
+# Create your views here.
 
 @login_required(redirect_field_name="")
 def main_view(request):
