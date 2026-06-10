@@ -1,5 +1,7 @@
 from django import forms
 from django.contrib.auth import get_user_model, authenticate
+from django.contrib.auth.models import User
+from .models import UserProfile
 
 User = get_user_model()
 
@@ -49,3 +51,28 @@ class LoginUserForm(forms.Form):
             elif not self.user_cache.is_active:
                 raise forms.ValidationError("This account is inactive.")
         return cleaned_data
+    
+class UpdateUserForm(forms.ModelForm):
+    username = forms.CharField(
+        max_length=100,
+        required=True,
+        widget=forms.TextInput(attrs={"class": "form-control"}),
+    )
+    
+    email = forms.EmailField(
+        required=True, widget=forms.TextInput(attrs={"class": "form-control"})
+    )
+
+    class Meta:
+        model = User
+        fields = ["username", "email"]
+
+
+class UpdateProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ['avatar', 'bio']
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['bio'].required = False

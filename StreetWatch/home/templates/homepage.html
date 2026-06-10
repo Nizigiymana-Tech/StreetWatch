@@ -2,16 +2,18 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="{% static 'homepage.css' %}">
 </head>
+
 <body>
 
     <div id="Welcome">
-        <img src="{% static 'TemplatePFP.png' %}" alt="Profile Picture">
+        <img src="{{ user.userprofile.avatar.url }}" alt="Profile Picture">
         <h1>Hello! {{ user.first_name }}</h1>
 
         <form method="POST" action="{% url 'logout' %}">
@@ -19,8 +21,18 @@
             <button type="submit">Log Out</button>
         </form>
 
-        <button>Settings</button>
-        <button>Profile</button>
+        <form method="POST" action="{% url 'profile' %}">
+            {% csrf_token %}
+            <button>Profile</button>
+        </form>
     </div>
+
+
+    <div id="doorprofit-crime-map" class="map"
+        data-address="500 Adams St, Tulsa, OK"
+        data-key="dp_4616de9384ae97bcf6d5c9cb1452c80f900eb13021c638b1"></div>
+
+    <script src="https://api.doorprofit.com/v1/embed/crime-map.js" async></script>
 </body>
+
 </html>

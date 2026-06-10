@@ -4,13 +4,14 @@ body {
 
 #Welcome {
     display: grid;
-    grid-template-columns: repeat(3, 175px);
+    grid-template-columns: repeat(4, 175px);
     gap: 10px;
 
     background-color: white;
     border: 3px black solid;
 
     transform: scale(0.8) translateX(-12%);
+    height: 135px;
 }
 
 #Welcome > img {
@@ -18,7 +19,7 @@ body {
 }
 
 #Welcome > h1 {
-    transform: translateY(40px) translateX(-15px);
+    transform: translateY(35px) translateX(-15px);
 }
 
 #Welcome button {
@@ -31,4 +32,15 @@ body {
     cursor: pointer;
 
     transform: translateY(50px);
+}
+
+.map {
+    width: 75%;
+    margin: auto;
+
+    transform: translateY(15px);
+}
+
+.map .maplibregl-map {
+    height: 700px !important;
 }
