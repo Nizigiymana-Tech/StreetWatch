@@ -42,4 +42,5 @@ label {
     padding: 5px;
 
     transform: translateY(-15%);
+    cursor: pointer;
 }

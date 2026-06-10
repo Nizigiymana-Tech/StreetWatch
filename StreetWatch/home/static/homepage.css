@@ -1,12 +1,27 @@
+body {
+    background-color: #f2f2f2;
+}
+
 #Welcome {
     display: grid;
     grid-template-columns: repeat(3, 175px);
     gap: 10px;
 
-    transform: scale(0.6);
-    transform: translateX(-20px);
+    transform: scale(0.8) translateX(-12%);
 }
 
 #Welcome > h1 {
     transform: translateY(40px) translateX(-15px);
+}
+
+#Welcome button {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    cursor: pointer;
+
+    transform: translateY(50px);
 }
