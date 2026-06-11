@@ -4,7 +4,7 @@ body {
 
 #Welcome {
     display: grid;
-    grid-template-columns: repeat(4, 175px);
+    grid-template-columns: repeat(5, 175px);
     gap: 10px;
 
     background-color: white;

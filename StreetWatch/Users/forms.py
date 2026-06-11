@@ -1,7 +1,6 @@
 from django import forms
 from django.contrib.auth import get_user_model, authenticate
-from django.contrib.auth.models import User
-from .models import UserProfile
+from .models import UserProfile, UserSetting
 
 User = get_user_model()
 
@@ -76,3 +75,8 @@ class UpdateProfileForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['bio'].required = False
+
+class SettingsForm(forms.ModelForm):
+    class Meta:
+        model = UserSetting
+        fields = '__all__'

@@ -14,22 +14,26 @@
 
     <div id="Welcome">
         <img src="{{ user.userprofile.avatar.url }}" alt="Profile Picture">
-        <h1>Hello! {{ user.first_name }}</h1>
+        <h1>Welcome!</h1>
 
         <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
             <button type="submit">Log Out</button>
         </form>
 
-        <form method="POST" action="{% url 'profile' %}">
+        <form method="POST">
             {% csrf_token %}
-            <button>Profile</button>
+            <button type="submit" name="Profile">Profile</button>
+        </form>
+
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit" name="Settings">Settings</button>
         </form>
     </div>
 
-
     <div id="doorprofit-crime-map" class="map"
-        data-address="500 Adams St, Tulsa, OK"
+        data-address="{{ user.settings.street_address }}, {{ user.settings.city }}, {{ user.settings.state }}, {{ user.settings.zip_code }}"
         data-key="dp_4616de9384ae97bcf6d5c9cb1452c80f900eb13021c638b1"></div>
 
     <script src="https://api.doorprofit.com/v1/embed/crime-map.js" async></script>

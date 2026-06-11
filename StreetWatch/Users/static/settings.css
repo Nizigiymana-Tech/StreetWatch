@@ -1,0 +1,48 @@
+body {
+    background-color: white;
+}
+
+#Settings {
+    outline: 3px rgb(72, 72, 72) solid;
+    background-color: rgb(255, 246, 235);
+
+    width: 500px;
+    height: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#Settings > h1 {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(65, 65, 65);
+}
+
+p { 
+    text-align: center; 
+}
+
+label {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h2 {
+    text-align: center;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+#SubmitButton {
+    display: block;
+    margin: 0 auto;
+
+    border: 2px solid white;
+    color: rgb(64, 55, 55);
+    background-color: beige;
+    
+    padding: 5px;
+
+    transform: translateY(-15%);
+}
