@@ -1,46 +1,73 @@
 body {
-    background-color: #d8d8d8;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(180deg, #e6e6e6, #d8d8d8);
+    color: #111;
 }
 
 #Welcome {
     display: grid;
-    grid-template-columns: repeat(5, 175px);
-    gap: 10px;
+    grid-template-columns: 80px 1fr auto auto;
+    align-items: center;
+    gap: 20px;
 
-    background-color: white;
-    border: 3px black solid;
+    background: white;
+    border-radius: 16px;
+    border: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 
-    transform: scale(0.8) translateX(-12%);
-    height: 135px;
+    padding: 15px 25px;
+    margin: 20px auto;
+    width: 85%;
+
+    height: auto;
 }
 
 #Welcome > img {
-    transform: scale(0.75);
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
 }
 
-#Welcome > h1 {
-    transform: translateY(35px) translateX(-15px);
+\#Welcome > h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 #Welcome button {
-    background: black;
+    background: #111;
     color: white;
-    border: 2px rgb(125, 125, 125) solid;
-    padding: 10px;
-    width: 100px;
-    height: 50px;
-    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 16px;
+    min-width: 100px;
 
-    transform: translateY(50px);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+#Welcome button:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+#Welcome button:active {
+    transform: translateY(0px);
 }
 
 .map {
-    width: 75%;
-    margin: auto;
-
-    transform: translateY(15px);
+    width: 85%;
+    margin: 30px auto;
 }
 
 .map .maplibregl-map {
     height: 700px !important;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    border: none;
 }

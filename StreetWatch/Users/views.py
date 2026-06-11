@@ -30,7 +30,7 @@ def login_view(request):
         if form.is_valid():
             user = form.user_cache
             login(request, user)
-            return redirect('/')
+            return redirect('home:homepage')
     else:
         form = LoginUserForm()
 
