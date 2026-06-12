@@ -51,6 +51,7 @@ def profile(request):
 
     if request.method == 'POST':
         user_form = UpdateUserForm(request.POST, instance=request.user)
+        
         profile_form = UpdateProfileForm(
             request.POST,
             request.FILES,
