@@ -71,6 +71,32 @@ class UpdateProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = ['avatar', 'bio']
+        
+    # super is the the parent class that allows you to use functions inside the parent class inside the child class
+    # args are tuple '()' that have int values, strings etc, kwargs are dictionaries '[]' 
+    # EXAMPLE: (chatgpt)
+
+    # def multiply_all(*args):
+    # # args is collected into a tuple: (2, 3, 4)
+    #   result = 1
+    #   for num in args:
+    #     result *= num
+    #   return result
+
+    # print(multiply_all(2, 3))        # Output: 6
+    # print(multiply_all(2, 3, 4, 5))  # Output: 120
+
+    # def print_profile(**kwargs):
+    #   # kwargs is collected into a dictionary: {"name": "Alice", "role": "Dev"}
+    #    for key, value in kwargs.items():
+    #       print(f"{key}: {value}")
+
+    # Pass inputs using key=value syntax
+    #   print_profile(name="Alice", role="Developer", city="Boston")
+    # Output:
+    # name: Alice
+    # role: Developer
+    # city: Boston
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
