@@ -22,8 +22,5 @@ This project acts as a way to see the danger level of crime near you or where yo
 - Filters
 - Auto-Complete address finder
 
-## License
-MIT License
-
 > [!NOTE]  
 > Do not fully trust this data fully, crimes happen every second and we arent able to immediately get them all. The api gets updated daily but still travel safely.
