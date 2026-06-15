@@ -14,6 +14,10 @@
 
         <h2>Address</h2>
 
+        <p class="Disclaimer">
+            Coordinates will be considered first, if you want to use an address, remove cooridnates section
+        </p>
+
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}

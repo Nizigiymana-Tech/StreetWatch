@@ -21,6 +21,10 @@ body {
     color: rgb(65, 65, 65);
 }
 
+.Disclaimer {
+    color: rgba(0, 0, 0, 0.5);
+}
+
 p { 
     text-align: center; 
 }

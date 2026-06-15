@@ -15,6 +15,7 @@ body {
     border-radius: 16px;
     border: none;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    border: 3px solid black;
 
     padding: 15px 25px;
     margin: 20px auto;
@@ -30,7 +31,7 @@ body {
     object-fit: cover;
 }
 
-\#Welcome > h1 {
+#Welcome > h1 {
     margin: 0;
     font-size: 1.5rem;
     font-weight: 700;
@@ -70,4 +71,5 @@ body {
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     border: none;
+    border: black 3px solid;
 }

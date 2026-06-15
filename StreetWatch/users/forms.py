@@ -105,4 +105,4 @@ class UpdateProfileForm(forms.ModelForm):
 class SettingsForm(forms.ModelForm):
     class Meta:
         model = UserSetting
-        fields = ['street_address', 'city', 'state', 'zip_code']
+        fields = ['street_address', 'city', 'state', 'zip_code', "coordinatesx", "coordinatesy"]

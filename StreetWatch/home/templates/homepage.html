@@ -14,7 +14,7 @@
 
     <div id="Welcome">
         <img src="{{ user.userprofile.avatar.url }}" alt="Profile Picture">
-        <h1>Welcome!</h1>
+        <h1>Welcome, {{ user.first_name }}!</h1>
 
         <form method="POST" action="{% url 'logout' %}">
             {% csrf_token %}
@@ -32,11 +32,20 @@
         </form>
     </div>
 
-    <div id="doorprofit-crime-map" class="map"
-        data-address="{{ user.settings.street_address }}, {{ user.settings.city }}, {{ user.settings.state }}, {{ user.settings.zip_code }}"
-        data-key="dp_4616de9384ae97bcf6d5c9cb1452c80f900eb13021c638b1"></div>
+    {% if user.settings.coordinatesx and user.settings.coordinatesy %}
+        <div id="doorprofit-crime-map" class="map"
+            data-lat="{{ user.settings.coordinatesx }}"
+            data-lng="{{ user.settings.coordinatesy }}"
+            data-key="dp_4616de9384ae97bcf6d5c9cb1452c80f900eb13021c638b1"></div>
 
-    <script src="https://api.doorprofit.com/v1/embed/crime-map.js" async></script>
+        <script src="https://api.doorprofit.com/v1/embed/crime-map.js" async></script>
+    {% else %}
+        <div id="doorprofit-crime-map" class="map"
+            data-address="{{ user.settings.street_address }}, {{ user.settings.city }}, {{ user.settings.state }}, {{ user.settings.zip_code }}"
+            data-key="dp_4616de9384ae97bcf6d5c9cb1452c80f900eb13021c638b1"></div>
+
+        <script src="https://api.doorprofit.com/v1/embed/crime-map.js" async></script>
+    {% endif %}
 
     <noscript>
         <a href="https://www.doorprofit.com//crime-map/" target="_blank" rel="noopener">

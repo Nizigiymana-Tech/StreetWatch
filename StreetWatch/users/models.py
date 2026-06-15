@@ -16,6 +16,8 @@ class UserSetting(models.Model):
     city = models.CharField(max_length=100, default="Worcester")
     state = models.CharField(max_length=50, default="MA")
     zip_code = models.CharField(max_length=10, blank=True, null=True, default="01605")
+    coordinatesx = models.CharField(blank=True, null=True)
+    coordinatesy = models.CharField(blank=True, null=True)
 
     def __str__(self) -> str:
         return self.user.username # type: ignore 
