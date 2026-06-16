@@ -5,9 +5,13 @@ body {
 #Login {
     outline: 3px rgb(72, 72, 72) solid;
     background-color: rgb(255, 246, 235);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+    border-radius: 16px;
 
     width: 500px;
     height: auto;
+    padding: 25px;
 
     position: absolute;
     top: 50%;
@@ -39,10 +43,19 @@ label {
     border-radius: 10px;
     padding: 10px 16px;
     min-width: 100px;
-
+    transition: all 0.2s ease;
     
     padding: 5px;
 
     transform: translateY(-15%);
     cursor: pointer;
+}
+
+#SubmitButton:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+#SubmitButton:active {
+    transform: translateY(0px);
 }
